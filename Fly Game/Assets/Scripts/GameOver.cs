@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameOver : MonoBehaviour
 {
     public GameObject gameOverPanel;
+    public GameObject SettingsPanel;
     public GameObject MainMenuPanel;
 
     // Update is called once per frame
@@ -13,6 +14,7 @@ public class GameOver : MonoBehaviour
     { 
         if(GameObject.FindGameObjectsWithTag("Player").Length == 0 && ScoreCounter.score >=1)
         {
+            SettingsPanel.SetActive(false);
             gameOverPanel.SetActive(true);
             MainMenuPanel.SetActive(false);
             ScoreCounter.score = 0;
@@ -25,6 +27,7 @@ public class GameOver : MonoBehaviour
     }
     public void Menu()
     {
+        SettingsPanel.SetActive(false);
         gameOverPanel.SetActive(false);
         MainMenuPanel.SetActive(true);
 

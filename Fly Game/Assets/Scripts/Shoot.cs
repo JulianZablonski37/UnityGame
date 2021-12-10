@@ -6,7 +6,7 @@ public class Shoot : MonoBehaviour
 {
     public Transform firePoint;
     public GameObject bulletPrefab;
-    public int bulletCounter=10;
+    public int bulletCounter=MainMenu.bullet;
     private bool IsRealoading;
 
     // Update is called once per frame
@@ -32,7 +32,7 @@ public class Shoot : MonoBehaviour
     {
         IsRealoading = true;
         yield return new WaitForSeconds(1f);
-        bulletCounter = 10;
+        bulletCounter = MainMenu.bullet;
         IsRealoading = false;
     }   
 }
