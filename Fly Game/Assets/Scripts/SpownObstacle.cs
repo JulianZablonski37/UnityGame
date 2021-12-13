@@ -28,7 +28,7 @@ public class SpownObstacle : MonoBehaviour
     {
         float randomX = Random.Range(minX, maxX);
         float randomY = Random.Range(minY, maxY);
-        if (spownHarderEnemy==0)
+        if (spownHarderEnemy==0 && ScoreCounter.score>=100)
         {
             spownHarderEnemy = MainMenu.spownHarderEnemy;
             Instantiate(obstacle[1], transform.position + new Vector3(randomX, randomY, 0), transform.rotation);
