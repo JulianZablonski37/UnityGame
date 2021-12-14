@@ -10,7 +10,7 @@ public class SpownObstacle : MonoBehaviour
     public float minY;
     public float maxX;
     public float maxY;
-    public int spownHarderEnemy=MainMenu.spownHarderEnemy;
+    public int spawnHarderEnemy=MainMenu.spownHarderEnemy;
    
     // Update is called once per frame
     void Update()
@@ -19,7 +19,7 @@ public class SpownObstacle : MonoBehaviour
         if(Time.time > spawnTime)
         {
             Spawn();
-            spownHarderEnemy--;
+            spawnHarderEnemy--;
             spawnTime = Time.time + MainMenu.respownEnemyTime;
         }
        
@@ -28,15 +28,14 @@ public class SpownObstacle : MonoBehaviour
     {
         float randomX = Random.Range(minX, maxX);
         float randomY = Random.Range(minY, maxY);
-        if (spownHarderEnemy==0 && ScoreCounter.score>=100)
+        if (spawnHarderEnemy<=0 && ScoreCounter.score>=10)
         {
-            spownHarderEnemy = MainMenu.spownHarderEnemy;
+            spawnHarderEnemy = MainMenu.spownHarderEnemy;
             Instantiate(obstacle[1], transform.position + new Vector3(randomX, randomY, 0), transform.rotation);
         }
-        else Instantiate(obstacle[0],transform.position+new Vector3(randomX,randomY,0),transform.rotation);
-        if(spownHarderEnemy == 0 && ScoreCounter.score >=200)
-        {
-            spownHarderEnemy = (int)(MainMenu.spownHarderEnemy%2);
+        else if(spawnHarderEnemy <= 0 && ScoreCounter.score >=20)
+        { 
+            spawnHarderEnemy = (int)(MainMenu.spownHarderEnemy%2);
             Instantiate(obstacle[1], transform.position + new Vector3(randomX, randomY, 0), transform.rotation);
 
         }

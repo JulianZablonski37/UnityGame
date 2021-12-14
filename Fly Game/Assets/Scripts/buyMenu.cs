@@ -11,10 +11,12 @@ public class buyMenu : MonoBehaviour
     public Text goldv2Text;
     public static float goldv2 = 50;
     public static bool bulletNew=false;
+    public float scoredgold = 0;
 
     // Update is called once per frame
     void Update()
     {
+        scoredgold = ScoreCounter.score;
         if (!pause.GameIsPaused)
         {
             ResumeMenuUi.SetActive(false);
@@ -30,9 +32,9 @@ public class buyMenu : MonoBehaviour
     {
          if(goldv2<=300)
         {
-            if(ScoreCounter.score-goldv2>=0)
+            if(scoredgold - goldv2>=0)
             {
-                ScoreCounter.score -= goldv2;
+                scoredgold -= goldv2;
                 goldv2 += 50;
                 goldv2Text.text = goldv2.ToString() + "$";
                 MainMenu.bullet += 4;
@@ -47,9 +49,9 @@ public class buyMenu : MonoBehaviour
     {
         if (!bulletNew)
         {
-            if (ScoreCounter.score - 100 >= 0)
+            if (scoredgold - 100 >= 0)
             {
-                ScoreCounter.score -= 100;
+                scoredgold -= 100;
                 bulletNew = true;
                 goldText.text = "FULL";
             }
