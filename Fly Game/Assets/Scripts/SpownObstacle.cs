@@ -34,5 +34,13 @@ public class SpownObstacle : MonoBehaviour
             Instantiate(obstacle[1], transform.position + new Vector3(randomX, randomY, 0), transform.rotation);
         }
         else Instantiate(obstacle[0],transform.position+new Vector3(randomX,randomY,0),transform.rotation);
+        if(spownHarderEnemy == 0 && ScoreCounter.score >=200)
+        {
+            spownHarderEnemy = (int)(MainMenu.spownHarderEnemy%2);
+            Instantiate(obstacle[1], transform.position + new Vector3(randomX, randomY, 0), transform.rotation);
+
+        }
+        else Instantiate(obstacle[0], transform.position + new Vector3(randomX, randomY, 0), transform.rotation);
+
     }
 }

@@ -15,6 +15,7 @@ public class Bullet : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
+        if (buyMenu.bulletNew) damage *= 2;
         Obstacle enemy = collision.GetComponent<Obstacle>();
         if(enemy != null)
         {

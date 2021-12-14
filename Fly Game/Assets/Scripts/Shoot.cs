@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Shoot : MonoBehaviour
 {
     public Transform firePoint;
-    public GameObject bulletPrefab;
+    public List<GameObject> bulletPrefab;
     public int bulletCounter=MainMenu.bullet;
     private bool IsRealoading;
     public Text bulletText;
@@ -41,7 +41,11 @@ public class Shoot : MonoBehaviour
     void ShootBullet()
     {
         bulletCounter--;
-        Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        if(buyMenu.bulletNew)
+        {
+            Instantiate(bulletPrefab[1], firePoint.position, firePoint.rotation);
+        }
+        else Instantiate(bulletPrefab[0], firePoint.position, firePoint.rotation);
     }
     private IEnumerator Reload()
     {

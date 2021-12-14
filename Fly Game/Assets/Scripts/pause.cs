@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class pause : MonoBehaviour
 {
     public GameObject pauseMenuUi;
+    public GameObject buyMenuUi;
     public static bool GameIsPaused = false;
     // Update is called once per frame
     void Update()
@@ -21,7 +22,8 @@ public class pause : MonoBehaviour
     }
     public void buy()
     {
-        Debug.Log("da");
+        buyMenuUi.SetActive(true);
+        pauseMenuUi.SetActive(false);
     }
     public void quit()
     {

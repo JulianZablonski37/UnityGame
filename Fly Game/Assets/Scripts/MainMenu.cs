@@ -14,7 +14,6 @@ public class MainMenu : MonoBehaviour
     public static int spownHarderEnemy=20;
     public void settings()
     {
-
         SettingsPanel.SetActive(true);
         MainMenuPanel.SetActive(false);
     }
