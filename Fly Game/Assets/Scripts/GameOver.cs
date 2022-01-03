@@ -12,12 +12,12 @@ public class GameOver : MonoBehaviour
     // Update is called once per frame
     void Update()
     { 
-        if(GameObject.FindGameObjectsWithTag("Player").Length == 0 && ScoreCounter.score >=1)
+        if(GameObject.FindGameObjectsWithTag("Player").Length == 0 && ScoreCounter.score >=2)
         {
             SettingsPanel.SetActive(false);
             gameOverPanel.SetActive(true);
             MainMenuPanel.SetActive(false);
-            ScoreCounter.score = 0;
+            ScoreCounter.score = 1.2f;
 
         }
     }

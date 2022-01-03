@@ -2,17 +2,21 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - Bullet
+    - BulletBoss
     - CamerMoving
     - GameOver
     - LoopingBackground
     - MainMenu
     - Obstacle
     - Obstaclev2
+    - Obstaclev3
     - Player
     - ScoreCounter
     - Settingsmenu
     - Shoot
     - SpownObstacle
+    - buyMenu
+    - pause
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.IK.Editor.dll:
@@ -22,6 +26,8 @@ ScriptsOnlyBuild:
     - UnityEditor.U2D.IK.IKEditorManagerHelper
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
+    - UnityEditor.Tilemaps.GridPaletteBrushes
+    - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.SceneViewOpenTilePaletteHelper
     - UnityEditor.Tilemaps.TileDragAndDropManager
@@ -83,37 +89,49 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
+      Script: {instanceID: 1476}
+    - Class: 114
       Script: {instanceID: 1518}
     - Class: 114
       Script: {instanceID: 1848}
     - Class: 114
-      Script: {instanceID: 2240}
+      Script: {instanceID: 1980}
     - Class: 114
-      Script: {instanceID: 2248}
+      Script: {instanceID: 2242}
     - Class: 114
-      Script: {instanceID: 2360}
+      Script: {instanceID: 2250}
     - Class: 114
-      Script: {instanceID: 2376}
+      Script: {instanceID: 2362}
     - Class: 114
-      Script: {instanceID: 2664}
+      Script: {instanceID: 2378}
     - Class: 114
-      Script: {instanceID: 2828}
+      Script: {instanceID: 2666}
     - Class: 114
-      Script: {instanceID: 2876}
+      Script: {instanceID: 2830}
     - Class: 114
-      Script: {instanceID: 2946}
+      Script: {instanceID: 2878}
     - Class: 114
-      Script: {instanceID: 3050}
+      Script: {instanceID: 2948}
     - Class: 114
-      Script: {instanceID: 3156}
+      Script: {instanceID: 3052}
     - Class: 114
-      Script: {instanceID: 3298}
+      Script: {instanceID: 3158}
     - Class: 114
-      Script: {instanceID: 3738}
+      Script: {instanceID: 3300}
     - Class: 114
-      Script: {instanceID: 4334}
+      Script: {instanceID: 3422}
     - Class: 114
-      Script: {instanceID: 5438}
+      Script: {instanceID: 3452}
+    - Class: 114
+      Script: {instanceID: 3742}
+    - Class: 114
+      Script: {instanceID: 4338}
+    - Class: 114
+      Script: {instanceID: 5444}
+    - Class: 114
+      Script: {instanceID: 17992}
+    - Class: 114
+      Script: {instanceID: 18244}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -176,31 +194,31 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1848}
     - Class: 114
-      Script: {instanceID: 2232}
+      Script: {instanceID: 2234}
     - Class: 114
-      Script: {instanceID: 2360}
+      Script: {instanceID: 2362}
     - Class: 114
-      Script: {instanceID: 2664}
+      Script: {instanceID: 2666}
     - Class: 114
-      Script: {instanceID: 2828}
+      Script: {instanceID: 2830}
     - Class: 114
-      Script: {instanceID: 2876}
+      Script: {instanceID: 2878}
     - Class: 114
-      Script: {instanceID: 3050}
+      Script: {instanceID: 3052}
     - Class: 114
-      Script: {instanceID: 3298}
+      Script: {instanceID: 3300}
     - Class: 114
-      Script: {instanceID: 3420}
+      Script: {instanceID: 3422}
     - Class: 114
-      Script: {instanceID: 3628}
+      Script: {instanceID: 3632}
     - Class: 114
-      Script: {instanceID: 4540}
+      Script: {instanceID: 4544}
     - Class: 114
-      Script: {instanceID: 4616}
+      Script: {instanceID: 4620}
     - Class: 114
-      Script: {instanceID: 4770}
+      Script: {instanceID: 4774}
     - Class: 114
-      Script: {instanceID: 5152}
+      Script: {instanceID: 5158}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -232,7 +250,7 @@ ScriptsOnlyBuild:
     className: Image
   - hash:
       serializedVersion: 2
-      Hash: bdd1549078e0d1d16a30c7c3c9b9cbc0
+      Hash: fe51ceb7b830211235b71558425d4368
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Shoot
@@ -346,6 +364,12 @@ ScriptsOnlyBuild:
     className: SimpleScript
   - hash:
       serializedVersion: 2
+      Hash: f636ae2063ef038b4a4f65a2e591d7d6
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: buyMenu
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: TMPro
@@ -394,7 +418,7 @@ ScriptsOnlyBuild:
     className: LoopingBackground
   - hash:
       serializedVersion: 2
-      Hash: 3d21dc086772f625f0fb075020cd1d83
+      Hash: 33731d7b25654cc22a20c9682d02db6e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SpownObstacle
@@ -596,6 +620,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.2D.SpriteShape.Runtime.dll
     namespaceName: UnityEngine.U2D
     className: SpriteShapeController
+  - hash:
+      serializedVersion: 2
+      Hash: 7b0f6905f6217b7df695307c68f022c5
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: pause
   - hash:
       serializedVersion: 2
       Hash: 4fd8bf02e3089425d3502e26c44ba31a
@@ -892,6 +922,12 @@ ScriptsOnlyBuild:
     className: TMP_SubMeshUI
   - hash:
       serializedVersion: 2
+      Hash: 43215c2b4b8117eb08997150270e8755
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: BulletCounter
+  - hash:
+      serializedVersion: 2
       Hash: fe1fdeffc2067077b2f1a90b210c2532
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -1016,8 +1052,20 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: TMPro.Examples
     className: TMP_TextEventCheck
+  - hash:
+      serializedVersion: 2
+      Hash: c32b07a23e4fbd4cc737ded342398e30
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Obstaclev3
+  - hash:
+      serializedVersion: 2
+      Hash: c823397b4e084b1d18a114fbe43e4544
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: BulletBoss
   platform: 19
   scenePathNames:
   - Assets/Scenes/Menu.unity
   - Assets/Scenes/Game.unity
-  playerPath: C:/Users/User/Desktop/zdjecia Ball/Hero loop.exe
+  playerPath: C:/Users/User/Desktop/zdjecia Ball/Fly and Fly.exe

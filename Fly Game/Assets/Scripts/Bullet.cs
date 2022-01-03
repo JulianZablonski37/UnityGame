@@ -27,6 +27,12 @@ public class Bullet : MonoBehaviour
         {
             enemyv2.TakeDamage(damage);
         }
+        Destroy(gameObject); 
+        Obstaclev3 enemyv3 = collision.GetComponent<Obstaclev3>();
+        if (enemyv3 != null)
+        {
+            enemyv3.TakeDamage(damage);
+        }
         Destroy(gameObject);
     }
 }

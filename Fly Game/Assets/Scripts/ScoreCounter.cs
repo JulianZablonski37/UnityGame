@@ -6,7 +6,7 @@ using UnityEngine;
 public class ScoreCounter : MonoBehaviour
 {
     public Text scoreText;
-    public static float score=0;
+    public static float score=1;
     // Update is called once per frame
     void Update()
     {
